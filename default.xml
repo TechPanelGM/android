@@ -13,6 +13,11 @@
            review="android-review.googlesource.com"
            revision="refs/tags/android-17.0.0_r1" />
 
+  <remote  name="github-non-los"
+           fetch="https://github.com"
+           sync-c="true"
+           sync-j="4" />
+
   <default revision="refs/heads/lineage-23.2"
            remote="github"
            sync-c="true"
@@ -21,7 +26,7 @@
   <contactinfo bugurl="go/repo-bug" />
 
   <!-- AOSP Projects -->
-  <project path="build/make" name="platform/build" groups="pdk,sysui-studio" remote="aosp">
+  <project path="build/make" name="TechPanelGM/android_build" groups="pdk,sysui-studio" remote="github-non-los" revision="lineage-24.0">
       <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
       <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
       <linkfile src="core" dest="build/core" />
@@ -32,11 +37,11 @@
   <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" remote="aosp"/>
   <project path="build/pesto" name="platform/build/pesto" groups="pdk" remote="aosp"/>
   <project path="build/release" name="platform/build/release" groups="pdk,tradefed,sysui-studio" remote="aosp"/>
-  <project path="build/soong" name="platform/build/soong" groups="pdk,tradefed,sysui-studio" remote="aosp" />
+  <project path="build/soong" name="TechPanelGM/android_build_soong" groups="pdk,tradefed,sysui-studio" remote="github-non-los" revision="lineage-24.0" />
   <project path="art" name="platform/art" groups="pdk" remote="aosp" />
   <project path="bionic" name="platform/bionic" groups="pdk" remote="aosp"/>
-  <project path="bootable/deprecated-ota" name="platform/bootable/deprecated-ota" groups="pdk-cw,pdk-arsp-ag-sot,pdk-arsp-common" remote="aosp"/>
-  <project path="bootable/recovery" name="platform/bootable/recovery" groups="pdk" remote="aosp"/>
+  <project path="bootable/deprecated-ota" name="TechPanelGM/android_bootable_deprecated-ota" groups="pdk-cw,pdk-arsp-ag-sot,pdk-arsp-common" remote="github-non-los" revision="lineage-24.0"/>
+  <project path="bootable/recovery" name="TechPanelGM/android_bootable_recovery" groups="pdk" remote="github-non-los" revision="lineage-24.0"/>
   <project path="bootable/libbootloader" name="platform/bootable/libbootloader" groups="vts,pdk" remote="aosp"/>
   <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="dalvik" name="platform/dalvik" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
